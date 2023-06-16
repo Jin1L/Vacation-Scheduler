@@ -9,8 +9,6 @@
   padding: 20px;
   display: flex;
   align-items: center;
-  max-width: 600px;
-  margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
 }
 .navbar h1 {
@@ -34,8 +32,80 @@
 }
 
 .searchbar {
+  width: 800px;
+  background:white;
+  box-shadow: 0 0 5px hsl(0 0% 78%);
+  height: 55px;
+  border-radius: 100vw;
   display: flex;
-  padding: 20px;
+  justify-content: center;
+  align-content: center;
+  font-size: 0.6rem;
+}
+
+.searchbar div {
+  border-radius: inherit;
+  padding: 0.8rem 1.5rem;
+  transition: background 250ms ease;
+}
+
+.searchbar p {
+  position: relative;
+  text-align: left;
+}
+
+.searchbar div:hover {
+  background: hsl(0 0% 94%);
+}
+
+.location {
+  width: 34%;
+}
+
+.start_date, .end_date, .people {
+  width: 22%;
+}
+
+.people{
+  position: relative;
+}
+
+input[type="text"]{
+  background:none;
+  border:none;
+  padding:0.2rem 0 0 0;
+}
+
+input[type="text"]:focus{
+  outline:none;
+}
+
+::placeholder{
+  font-size:0.75rem;
+}
+
+.bar>div{
+  position:relative;
+}
+
+.bar>div::before{
+  position:absolute;
+  content:"";
+  left:0;
+  top:50%;
+  transform:translateY(-50%);
+  width:1px;
+  height:55%;
+  background:hsl(0 0% 90%);
+}
+
+.bar>div:nth-of-type(1)::before{
+   background:transparent;
+}
+
+
+.bar>div:hover::before{
+  background:transparent;
 }
 
 /* code {
