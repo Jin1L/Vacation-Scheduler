@@ -59,8 +59,8 @@ const useStyle = createStyles(() => ({
   },
   iconBox: {
     position: "absolute",
-    left: "58.2%",
-    top: "19.6%",
+    left: "60.6%",
+    top: "25.7%",
     backgroundColor: "#30a1df80",
     borderRadius: 20,
     width: "1.5%",

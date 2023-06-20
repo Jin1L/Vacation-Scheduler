@@ -5,16 +5,16 @@ import { createStyles } from "@mantine/core";
 const useStyle = createStyles(() => ({
   home: {
     display: "relative",
+    paddingTop: "14vh",
     margin: 0,
-    padding: 0,
-    height: "100%",
-    width: "100%",
   },
   slogan: {
     color: "#fff",
-    paddingTop: 90,
     marginBottom: 10,
     marginLeft: -45,
+  },
+  searchBar: {
+    marginLeft: "6%"
   }
 }));
 
@@ -25,7 +25,7 @@ const Home = () => {
       <div>
         <h2 className={classes.slogan}>Make your trips come true</h2>
       </div>
-      <Searchbar></Searchbar>
+      <div className={classes.searchBar}><Searchbar/></div>
     </div>
   );
 };

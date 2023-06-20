@@ -5,19 +5,18 @@ const useStyle = createStyles(() => ({
   navbar: {
     display: "flex",
     color: "#fff",
-  },
-  title: {
-    marginLeft: 343,
-    marginTop: 10,
+    paddingTop: "2.6vh",
+    marginLeft: "40.5vh",
   },
   links: {
     display: "flex",
-    marginLeft: 350,
-    marginTop: 20,
+    right: 10,
+    marginLeft: "50vh"
   },
   tabs: {
-    marginRight: 15,
     textDecoration: "none",
+    marginTop: "4%",
+    marginRight: 12,
   },
 }));
 
@@ -27,7 +26,7 @@ const Navbar = () => {
   return (
     <div className={classes.navbar}>
       <div>
-        <h1 className={classes.title}>Vacation Scheduler</h1>
+        <h1>Vacation Scheduler</h1>
       </div>
       <div className={classes.links}>
         <h3 className={classes.tabs}>Home</h3>
