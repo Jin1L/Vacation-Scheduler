@@ -1,10 +1,8 @@
 .App {
   text-align: center;
   background-image: url("./wallpaper.jpg");
-  background-size: 1680px 870px;
+  background-size: 100%;
   background-repeat:no-repeat;
-  height: 51.8vw;
-  width: 100vw;
 }
 
 .content {
