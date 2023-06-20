@@ -8,9 +8,10 @@ const useStyle = createStyles(() => ({
     boxSizing: "border-box",
     justifyContent: "center",
     marginLeft: "28.7%",
+    marginTop: "2%",
     width: "31.4%",
     backgroundColor: "#ffffff",
-    boxShadow:"0 0 5px hsl(0 0% 78%)",
+    boxShadow: "0 0 5px hsl(0 0% 78%)",
     borderRadius: 20,
     color: "#000",
   },
@@ -48,11 +49,11 @@ const useStyle = createStyles(() => ({
       background: "hsl(0 0% 94%)",
     },
   },
-  label:{
+  label: {
     position: "absolute",
     fontSize: 11,
     fontWeight: "bold",
-    textAlign:"left",
+    textAlign: "left",
     zIndex: 5,
     marginLeft: 12.1,
     marginTop: 7,
@@ -65,13 +66,13 @@ const useStyle = createStyles(() => ({
     borderRadius: 20,
     width: "1.5%",
     height: "3%",
-    ":hover":{
-      backgroundColor: "#1c94d4a8"
-    }
+    ":hover": {
+      backgroundColor: "#1c94d4a8",
+    },
   },
   icon: {
     marginTop: 5.5,
-  }
+  },
 }));
 
 const Searchbar = () => {
@@ -111,7 +112,7 @@ const Searchbar = () => {
             <Input placeholder="Where are you going?"></Input>
           </div>
           <div className={classes.startDate}>
-            <p className={classes.label} >Start Date</p>
+            <p className={classes.label}>Start Date</p>
             <Input placeholder="Starting Date"></Input>
           </div>
           <div className={classes.endDate}>
@@ -121,7 +122,9 @@ const Searchbar = () => {
           <div className={classes.people}>
             <p className={classes.label}>People</p>
             <Input placeholder="How many people?"></Input>
-            <span className={classes.iconBox}><BiSearchAlt2 className={classes.icon}/></span>
+            <span className={classes.iconBox}>
+              <BiSearchAlt2 className={classes.icon} />
+            </span>
           </div>
         </div>
       </MantineProvider>
