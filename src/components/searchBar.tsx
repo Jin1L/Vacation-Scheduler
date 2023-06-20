@@ -1,5 +1,6 @@
 import React from "react";
 import { createStyles, Input, MantineProvider } from "@mantine/core";
+import { BiSearchAlt2 } from "react-icons/bi";
 
 const useStyle = createStyles(() => ({
   searchBar: {
@@ -7,7 +8,7 @@ const useStyle = createStyles(() => ({
     boxSizing: "border-box",
     justifyContent: "center",
     marginLeft: "28.7%",
-    width: 680,
+    width: "31.4%",
     backgroundColor: "#ffffff",
     boxShadow:"0 0 5px hsl(0 0% 78%)",
     borderRadius: 20,
@@ -40,6 +41,7 @@ const useStyle = createStyles(() => ({
     },
   },
   people: {
+    display: "flex",
     borderRadius: 20,
     width: "25%",
     ":hover": {
@@ -55,6 +57,21 @@ const useStyle = createStyles(() => ({
     marginLeft: 12.1,
     marginTop: 7,
   },
+  iconBox: {
+    position: "absolute",
+    left: "60.6%",
+    top: "25.7%",
+    backgroundColor: "#30a1df80",
+    borderRadius: 20,
+    width: "1.5%",
+    height: "3%",
+    ":hover":{
+      backgroundColor: "#1c94d4a8"
+    }
+  },
+  icon: {
+    marginTop: 5.5,
+  }
 }));
 
 const Searchbar = () => {
@@ -104,6 +121,7 @@ const Searchbar = () => {
           <div className={classes.people}>
             <p className={classes.label}>People</p>
             <Input placeholder="How many people?"></Input>
+            <span className={classes.iconBox}><BiSearchAlt2 className={classes.icon}/></span>
           </div>
         </div>
       </MantineProvider>
