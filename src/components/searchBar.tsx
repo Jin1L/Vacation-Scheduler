@@ -1,6 +1,7 @@
 import React from "react";
 import { createStyles, Input, MantineProvider } from "@mantine/core";
 import { BiSearchAlt2 } from "react-icons/bi";
+import useInput from "../hooks/useInput";
 
 const useStyle = createStyles(() => ({
   searchBar: {
@@ -77,6 +78,12 @@ const useStyle = createStyles(() => ({
 
 const Searchbar = () => {
   const { classes } = useStyle();
+
+  const location = useInput("");
+  const startDate = useInput("");
+  const endDate = useInput("");
+  const people = useInput("");
+
   return (
     <>
       <MantineProvider
@@ -109,19 +116,39 @@ const Searchbar = () => {
         <div className={classes.searchBar}>
           <div className={classes.location}>
             <p className={classes.label}>Location</p>
-            <Input placeholder="Where are you going?"></Input>
+            <Input
+              placeholder="Where are you going?"
+              type="text"
+              value={location.value}
+              onChange={location.onChange}
+            ></Input>
           </div>
           <div className={classes.startDate}>
             <p className={classes.label}>Start Date</p>
-            <Input placeholder="Starting Date"></Input>
+            <Input
+              placeholder="Starting Date"
+              type="text"
+              value={startDate.value}
+              onChange={startDate.onChange}
+            ></Input>
           </div>
           <div className={classes.endDate}>
             <p className={classes.label}>End Date</p>
-            <Input placeholder="Ending Date"></Input>
+            <Input
+              placeholder="Ending Date"
+              type="text"
+              value={endDate.value}
+              onChange={endDate.onChange}
+            ></Input>
           </div>
           <div className={classes.people}>
             <p className={classes.label}>People</p>
-            <Input placeholder="How many people?"></Input>
+            <Input
+              placeholder="How many people?"
+              type="text"
+              value={people.value}
+              onChange={people.onChange}
+            ></Input>
             <span className={classes.iconBox}>
               <BiSearchAlt2 className={classes.icon} />
             </span>
