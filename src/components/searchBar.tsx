@@ -27,14 +27,14 @@ const useStyle = createStyles(() => ({
     marginTop: 0,
     marginBottom: 0,
   },
-  startDate: {
+  date: {
     borderRadius: 20,
     width: "25%",
     ":hover": {
       background: "hsl(0 0% 94%)",
     },
   },
-  endDate: {
+  budget: {
     borderRadius: 20,
     width: "25%",
     ":hover": {
@@ -111,12 +111,12 @@ const Searchbar = () => {
             <p className={classes.label}>Location</p>
             <Input placeholder="Where are you going?"></Input>
           </div>
-          <div className={classes.startDate}>
-            <p className={classes.label}>Start Date</p>
+          <div className={classes.date}>
+            <p className={classes.label}>Date</p>
             <Input placeholder="Starting Date"></Input>
           </div>
-          <div className={classes.endDate}>
-            <p className={classes.label}>End Date</p>
+          <div className={classes.budget}>
+            <p className={classes.label}>Budget</p>
             <Input placeholder="Ending Date"></Input>
           </div>
           <div className={classes.people}>
