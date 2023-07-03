@@ -1,16 +1,20 @@
 import React from "react";
+
 import { createStyles, Input, MantineProvider } from "@mantine/core";
 import { BiSearchAlt2 } from "react-icons/bi";
 import useInput from "../hooks/useInput";
+import { TravelInfoProps } from "../types/TravelInfo";
+import useFetch from "../hooks/useFetch";
 
+// const URL = "http://localhost:3000/";
 const useStyle = createStyles(() => ({
   searchBar: {
     display: "flex",
     boxSizing: "border-box",
     justifyContent: "center",
-    marginLeft: "28.7%",
+    marginLeft: "26.7%",
     marginTop: "2%",
-    width: "31.4%",
+    width: "40.4%",
     backgroundColor: "#ffffff",
     boxShadow: "0 0 5px hsl(0 0% 78%)",
     borderRadius: 20,
@@ -61,29 +65,32 @@ const useStyle = createStyles(() => ({
   },
   iconBox: {
     position: "absolute",
-    left: "60.6%",
-    top: "25.7%",
+    left: "70.6%",
+    top: "29.7%",
     backgroundColor: "#30a1df80",
-    borderRadius: 20,
-    width: "1.5%",
+    borderRadius: 25,
+    borderWidth: 1,
+    width: "5%",
     height: "3%",
     ":hover": {
       backgroundColor: "#1c94d4a8",
     },
   },
   icon: {
-    marginTop: 5.5,
+    marginRight: "3%",
+    verticalAlign: "middle",
   },
 }));
 
 const Searchbar = () => {
   const { classes } = useStyle();
 
-  const location = useInput("");
-  const startDate = useInput("");
-  const endDate = useInput("");
-  const people = useInput("");
-
+  const { onChange, onSubmit } = useInput({
+    location: "",
+    startDate: "",
+    endDate: "",
+    numTravelers: 0,
+  } as TravelInfoProps);
   return (
     <>
       <MantineProvider
@@ -113,47 +120,53 @@ const Searchbar = () => {
           },
         }}
       >
-        <div className={classes.searchBar}>
-          <div className={classes.location}>
-            <p className={classes.label}>Location</p>
-            <Input
-              placeholder="Where are you going?"
-              type="text"
-              value={location.value}
-              onChange={location.onChange}
-            ></Input>
+        <form onSubmit={onSubmit}>
+          <div className={classes.searchBar}>
+            <div className={classes.location}>
+              <p className={classes.label}>Location</p>
+              <Input
+                placeholder="Where are you going?"
+                type="text"
+                name="location"
+                onChange={onChange}
+              ></Input>
+            </div>
+            <div className={classes.startDate}>
+              <p className={classes.label}>Start Date</p>
+              <Input
+                placeholder="Starting Date"
+                type="text"
+                name="startDate"
+                onChange={onChange}
+              ></Input>
+            </div>
+            <div className={classes.endDate}>
+              <p className={classes.label}>End Date</p>
+              <Input
+                placeholder="Ending Date"
+                type="text"
+                name="endDate"
+                onChange={onChange}
+              ></Input>
+            </div>
+            <div className={classes.people}>
+              <p className={classes.label}>People</p>
+              <Input
+                placeholder="How many people?"
+                type="number"
+                name="numTravelers"
+                onChange={onChange}
+              ></Input>
+              <button type="submit" className={classes.iconBox}>
+                <BiSearchAlt2 className={classes.icon} />
+                Search
+              </button>
+              {/* <span className={classes.iconBox}>
+                <BiSearchAlt2 className={classes.icon} />
+              </span> */}
+            </div>
           </div>
-          <div className={classes.startDate}>
-            <p className={classes.label}>Start Date</p>
-            <Input
-              placeholder="Starting Date"
-              type="text"
-              value={startDate.value}
-              onChange={startDate.onChange}
-            ></Input>
-          </div>
-          <div className={classes.endDate}>
-            <p className={classes.label}>End Date</p>
-            <Input
-              placeholder="Ending Date"
-              type="text"
-              value={endDate.value}
-              onChange={endDate.onChange}
-            ></Input>
-          </div>
-          <div className={classes.people}>
-            <p className={classes.label}>People</p>
-            <Input
-              placeholder="How many people?"
-              type="text"
-              value={people.value}
-              onChange={people.onChange}
-            ></Input>
-            <span className={classes.iconBox}>
-              <BiSearchAlt2 className={classes.icon} />
-            </span>
-          </div>
-        </div>
+        </form>
       </MantineProvider>
     </>
   );
