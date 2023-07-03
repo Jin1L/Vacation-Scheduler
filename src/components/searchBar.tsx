@@ -1,5 +1,5 @@
 import React from "react";
-import { createStyles, Input, MantineProvider } from "@mantine/core";
+import { createStyles, Input, MantineProvider, Select } from "@mantine/core";
 import { BiSearchAlt2 } from "react-icons/bi";
 
 const useStyle = createStyles(() => ({
@@ -14,6 +14,10 @@ const useStyle = createStyles(() => ({
     boxShadow: "0 0 5px hsl(0 0% 78%)",
     borderRadius: 20,
     color: "#000",
+  },
+  travelType: {
+    display: "relative",
+    width: "50vh",
   },
   location: {
     display: "relative",
@@ -106,6 +110,18 @@ const Searchbar = () => {
           },
         }}
       >
+        <div className={classes.travelType}>
+          <Select
+            label="Your favorite framework/library"
+            placeholder="Pick one"
+            data={[
+              { value: "react", label: "React" },
+              { value: "ng", label: "Angular" },
+              { value: "svelte", label: "Svelte" },
+              { value: "vue", label: "Vue" },
+            ]}
+          />
+        </div>
         <div className={classes.searchBar}>
           <div className={classes.location}>
             <p className={classes.label}>Location</p>
