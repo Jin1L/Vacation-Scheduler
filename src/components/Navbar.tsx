@@ -14,6 +14,9 @@ const useStyle = createStyles(() => ({
     marginLeft: "50vh"
   },
   tabs: {
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: 20,
     textDecoration: "none",
     marginTop: "4%",
     marginRight: 12,
@@ -29,10 +32,9 @@ const Navbar = () => {
         <h1>Vacation Scheduler</h1>
       </div>
       <div className={classes.links}>
-        <h3 className={classes.tabs}>Home</h3>
-        <h3 className={classes.tabs}>New Trip</h3>
-        <h3 className={classes.tabs}>My Trips</h3>
-        <h3 className={classes.tabs}>About</h3>
+        <a href="/" className={classes.tabs}>Home</a>
+        <a href="/mytrips" className={classes.tabs}>My Trip</a>
+        <a href="/about" className={classes.tabs}>About</a>
       </div>
     </div>
   );
