@@ -2,8 +2,7 @@ import React from "react";
 
 import { createStyles, Input, MantineProvider } from "@mantine/core";
 import { BiSearchAlt2 } from "react-icons/bi";
-import useInput from "../hooks/useInput";
-import { TravelInfoProps } from "../types/TravelInfo";
+import useTravelInfo from "../hooks/useTravelInfo";
 import useFetch from "../hooks/useFetch";
 
 // const URL = "http://localhost:3000/";
@@ -85,12 +84,12 @@ const useStyle = createStyles(() => ({
 const Searchbar = () => {
   const { classes } = useStyle();
 
-  const { onChange, onSubmit } = useInput({
+  const { onChange, onSubmit } = useTravelInfo({
     location: "",
     startDate: "",
     endDate: "",
     numTravelers: 0,
-  } as TravelInfoProps);
+  });
   return (
     <>
       <MantineProvider
@@ -161,9 +160,6 @@ const Searchbar = () => {
                 <BiSearchAlt2 className={classes.icon} />
                 Search
               </button>
-              {/* <span className={classes.iconBox}>
-                <BiSearchAlt2 className={classes.icon} />
-              </span> */}
             </div>
           </div>
         </form>
