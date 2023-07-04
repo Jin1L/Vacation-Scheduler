@@ -85,8 +85,8 @@ const Searchbar = () => {
 
   const { onChange, onSubmit } = useTripInfo({
     location: "",
-    startDate: "",
-    endDate: "",
+    date: "",
+    budget: 0.0,
     people: 0,
   });
   return (
@@ -122,19 +122,35 @@ const Searchbar = () => {
           <div className={classes.searchBar}>
             <div className={classes.location}>
               <p className={classes.label}>Location</p>
-              <Input placeholder="Where are you going?" name="location"></Input>
+              <Input
+                placeholder="Where are you going?"
+                name="location"
+                onChange={onChange}
+              ></Input>
             </div>
             <div className={classes.date}>
               <p className={classes.label}>Date</p>
-              <Input placeholder="Starting Date" name="date"></Input>
+              <Input
+                placeholder="Starting Date"
+                name="date"
+                onChange={onChange}
+              ></Input>
             </div>
             <div className={classes.budget}>
               <p className={classes.label}>Budget</p>
-              <Input placeholder="Ending Date"></Input>
+              <Input
+                placeholder="What's your budget?"
+                name="budget"
+                onChange={onChange}
+              ></Input>
             </div>
             <div className={classes.people}>
               <p className={classes.label}>People</p>
-              <Input placeholder="How many people?"></Input>
+              <Input
+                placeholder="How many people?"
+                name="people"
+                onChange={onChange}
+              ></Input>
               <span className={classes.iconBox}>
                 <BiSearchAlt2 className={classes.icon} />
               </span>
