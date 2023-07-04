@@ -31,14 +31,14 @@ const useStyle = createStyles(() => ({
     marginTop: 0,
     marginBottom: 0,
   },
-  startDate: {
+  date: {
     borderRadius: 20,
     width: "25%",
     ":hover": {
       background: "hsl(0 0% 94%)",
     },
   },
-  endDate: {
+  budget: {
     borderRadius: 20,
     width: "25%",
     ":hover": {
@@ -122,45 +122,22 @@ const Searchbar = () => {
           <div className={classes.searchBar}>
             <div className={classes.location}>
               <p className={classes.label}>Location</p>
-              <Input
-                placeholder="Where are you going?"
-                type="text"
-                name="location"
-                onChange={onChange}
-              ></Input>
+              <Input placeholder="Where are you going?" name="location"></Input>
             </div>
-            <div className={classes.startDate}>
-              <p className={classes.label}>Start Date</p>
-              <Input
-                placeholder="Starting Date"
-                type="text"
-                name="startDate"
-                onChange={onChange}
-              ></Input>
+            <div className={classes.date}>
+              <p className={classes.label}>Date</p>
+              <Input placeholder="Starting Date" name="date"></Input>
             </div>
-            <div className={classes.endDate}>
-              <p className={classes.label}>End Date</p>
-              <Input
-                placeholder="Ending Date"
-                type="text"
-                name="endDate"
-                onChange={onChange}
-              ></Input>
-              <button type="submit" className={classes.iconBox}>
-                <BiSearchAlt2 className={classes.icon} />
-              </button>
+            <div className={classes.budget}>
+              <p className={classes.label}>Budget</p>
+              <Input placeholder="Ending Date"></Input>
             </div>
             <div className={classes.people}>
               <p className={classes.label}>People</p>
-              <Input
-                placeholder="How many people?"
-                type="number"
-                name="numTravelers"
-                onChange={onChange}
-              ></Input>
-              <button type="submit" className={classes.iconBox}>
+              <Input placeholder="How many people?"></Input>
+              <span className={classes.iconBox}>
                 <BiSearchAlt2 className={classes.icon} />
-              </button>
+              </span>
             </div>
           </div>
         </form>
