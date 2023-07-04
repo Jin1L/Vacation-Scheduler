@@ -1,8 +1,8 @@
 import { FormEvent, ChangeEvent, useState } from "react";
-import { TravelInfoProps } from "../types/TravelInfo";
-import useFetch from "./useFetch";
-const useTravelInfo = (inputValue: TravelInfoProps) => {
-  const [data, setData] = useState<TravelInfoProps>(inputValue);
+import { TripInfoProps } from "../types/TripInfoProps";
+
+const useTripInfo = (inputValue: TripInfoProps) => {
+  const [data, setData] = useState<TripInfoProps>(inputValue);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -21,4 +21,4 @@ const useTravelInfo = (inputValue: TravelInfoProps) => {
   };
 };
 
-export default useTravelInfo;
+export default useTripInfo;

@@ -1,6 +1,6 @@
-export interface TravelInfoProps {
+export interface TripInfoProps {
   location: string;
   startDate: string;
   endDate: string;
-  numTravelers: number;
+  people: number;
 }

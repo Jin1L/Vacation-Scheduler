@@ -2,7 +2,7 @@ import React from "react";
 
 import { createStyles, Input, MantineProvider } from "@mantine/core";
 import { BiSearchAlt2 } from "react-icons/bi";
-import useTravelInfo from "../hooks/useTravelInfo";
+import useTripInfo from "../hooks/useTripInfo";
 import useFetch from "../hooks/useFetch";
 
 // const URL = "http://localhost:3000/";
@@ -63,20 +63,19 @@ const useStyle = createStyles(() => ({
     marginTop: 7,
   },
   iconBox: {
-    position: "absolute",
+    display: "flex",
     left: "70.6%",
     top: "29.7%",
     backgroundColor: "#30a1df80",
-    borderRadius: 25,
+    borderRadius: 30,
     borderWidth: 1,
-    width: "5%",
+    width: "1.7%",
     height: "3%",
     ":hover": {
       backgroundColor: "#1c94d4a8",
     },
   },
   icon: {
-    marginRight: "3%",
     verticalAlign: "middle",
   },
 }));
@@ -84,11 +83,11 @@ const useStyle = createStyles(() => ({
 const Searchbar = () => {
   const { classes } = useStyle();
 
-  const { onChange, onSubmit } = useTravelInfo({
+  const { onChange, onSubmit } = useTripInfo({
     location: "",
     startDate: "",
     endDate: "",
-    numTravelers: 0,
+    people: 0,
   });
   return (
     <>
@@ -147,6 +146,9 @@ const Searchbar = () => {
                 name="endDate"
                 onChange={onChange}
               ></Input>
+              <button type="submit" className={classes.iconBox}>
+                <BiSearchAlt2 className={classes.icon} />
+              </button>
             </div>
             <div className={classes.people}>
               <p className={classes.label}>People</p>
@@ -158,7 +160,6 @@ const Searchbar = () => {
               ></Input>
               <button type="submit" className={classes.iconBox}>
                 <BiSearchAlt2 className={classes.icon} />
-                Search
               </button>
             </div>
           </div>
